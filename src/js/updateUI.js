@@ -43,7 +43,7 @@ const Template = document.getElementById("template");
 
 function updateUIAboutUI(products) {
 
-    const { title, price: _price, thumbnail, description: _discription, brand } = products;
+    const { title, price: _price, thumbnail, description: _discription, brand, rating } = products;
 
     const clone = Template.content.cloneNode(true);
 
@@ -52,12 +52,14 @@ function updateUIAboutUI(products) {
     const cardDiscription = clone.querySelector(".card-discription");
     const cardPrice = clone.querySelector(".card-price");
     const cardBrand = clone.querySelector(".card-brand");
+    const cardRating = clone.querySelector(".card-rating");
 
     cardImage.src = thumbnail;
     cardTitle.textContent = title;
     cardDiscription.textContent = _discription;
     cardPrice.textContent = _price;
     cardBrand.textContent = brand
+    cardRating.textContent = rating
 
     cardList.appendChild(clone);
 }
