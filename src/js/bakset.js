@@ -21,7 +21,7 @@ export const addProduct = (p) => {
     Toastify({
       text: "Maxsulot qo'shildi",
       className: "info",
-      gravity: "bottom",
+      gravity: "top",
       position: "left",
       style: {
         background: "linear-gradient(to right, #00b09b, #96c93d)",
