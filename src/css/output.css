@@ -1508,11 +1508,17 @@
   .h-30 {
     height: calc(var(--spacing) * 30);
   }
+  .h-40 {
+    height: calc(var(--spacing) * 40);
+  }
   .w-20 {
     width: calc(var(--spacing) * 20);
   }
   .w-30 {
     width: calc(var(--spacing) * 30);
+  }
+  .w-40 {
+    width: calc(var(--spacing) * 40);
   }
   .w-70 {
     width: calc(var(--spacing) * 70);
@@ -1736,9 +1742,23 @@
     --btn-color: var(--color-info);
     --btn-fg: var(--color-info-content);
   }
+  .input-secondary {
+    &, &:focus, &:focus-within {
+      --input-color: var(--color-secondary);
+    }
+  }
   .input-success {
     &, &:focus, &:focus-within {
       --input-color: var(--color-success);
+    }
+  }
+  .hover\:shadow-xl\/20 {
+    &:hover {
+      @media (hover: hover) {
+        --tw-shadow-alpha: 20%;
+        --tw-shadow: 0 20px 25px -5px var(--tw-shadow-color, oklab(from rgb(0 0 0 / 0.1) l a b / 20%)), 0 8px 10px -6px var(--tw-shadow-color, oklab(from rgb(0 0 0 / 0.1) l a b / 20%));
+        box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+      }
     }
   }
   .hover\:shadow-xl\/30 {
