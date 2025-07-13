@@ -3,6 +3,12 @@ import { addProduct } from "./bakset.js";
 const template = document.querySelector("template");
 const productsList = document.getElementById("products-list");
 
+const aboutList = document.getElementById("about-list");
+const aboutTemplate = document.getElementById("about-template");
+
+const cartList = document.querySelector(".cart-list")
+const cartTemplate = document.querySelector(".cart-template")
+
 function updateUI({ products }) {
   products.forEach((product) => {
     const {
@@ -38,30 +44,49 @@ function updateUI({ products }) {
   });
 }
 
-const cardList = document.getElementById("card-list");
-const Template = document.getElementById("template");
-
 function updateUIAboutUI(products) {
+    const { title,price, thumbnail, discription, brand, rating } = products;
 
-    const { title, price: _price, thumbnail, description: _discription, brand, rating } = products;
+    const clone = aboutTemplate.content.cloneNode(true);
 
-    const clone = Template.content.cloneNode(true);
+    const aboutImage = clone.querySelector(".about-image");
+    const aboutTitle = clone.querySelector(".about-title");
+    const aboutDiscription = clone.querySelector(".about-discription");
+    const aboutPrice = clone.querySelector(".about-price");
+    const aboutBrand = clone.querySelector(".about-brand");
+    const aboutRating = clone.querySelector(".about-rating");
 
-    const cardImage = clone.querySelector(".card-image");
-    const cardTitle = clone.querySelector(".card-title");
-    const cardDiscription = clone.querySelector(".card-discription");
-    const cardPrice = clone.querySelector(".card-price");
-    const cardBrand = clone.querySelector(".card-brand");
-    const cardRating = clone.querySelector(".card-rating");
+    aboutImage.src = thumbnail;
+    aboutTitle.textContent = title;
+    aboutDiscription.textContent = discription;
+    aboutPrice.textContent = price;
+    aboutBrand.textContent = brand
+    aboutRating.textContent = rating
 
-    cardImage.src = thumbnail;
-    cardTitle.textContent = title;
-    cardDiscription.textContent = _discription;
-    cardPrice.textContent = _price;
-    cardBrand.textContent = brand
-    cardRating.textContent = rating
-
-    cardList.appendChild(clone);
+    aboutList.appendChild(clone);
 }
 
-export { updateUI, updateUIAboutUI };
+function updateCartUI (products) {
+   products.forEach((product) => {
+    const {id,title, price,thumbnail,description,brand,rating,amount
+    } = product;
+
+    const clone = cartTemplate.content.cloneNode(true);
+
+    const cartImage = clone.querySelector(".cart-image");
+    const cartTitle = clone.querySelector(".cart-title");
+    const cartPrice = clone.querySelector(".cart-price");
+    const cartBrand = clone.querySelector(".cart-brand");
+    const cartRating = clone.querySelector(".cart-rating");
+
+    cartImage.src = thumbnail;
+    cartTitle.textContent = title;
+    cartPrice.textContent = `$${price}`;
+    cartBrand.textContent = brand;
+    cartRating.textContent = rating;
+
+    cartList.appendChild(clone);
+});
+}
+
+export { updateUI, updateUIAboutUI,updateCartUI };

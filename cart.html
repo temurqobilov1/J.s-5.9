@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="./src/css/output.css">
+</head>
+<body>
+       <header class="bg-base-300">
+        <div class="align-elements">
+            <div class="navbar">
+                <div class="navbar-start">
+                    <a class="btn btn-ghost text-xl">Card</a>
+                </div>
+                <div class="navbar-center">
+                    <ul class="menu menu-horizontal">
+                        <li>
+                            <a href="./index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">About</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar-end">
+                    <div class="indicator">
+                        <span class="indicator-item badge badge-secondary product-amount">0</span>
+                        <button class="btn"><i class="fa-solid fa-cart-shopping text-2xl"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div class="align-elements">
+                <ul class="cart-list mt-20 flex flex-col gap-5">
+                </ul>
+                <template class="cart-template">
+                    <li class="card bg-base-200 shadow-sm hover:shadow-lg">
+                        <div class="flex items-center justify-between p-5">
+                            <img class="cart-image w-20 h-20 rounded-2xl " src="https://placehold.co/400" alt="">
+                            <div>
+                                <h3 class="cart-title text-2xl font-bold">compyuter</h3>
+                                <p class="text-xl font-mono">Brand: <span class="cart-brand  italic font-normal"></span></p>
+                            </div>
+                            <div>
+                                <p class="text-xl font-mono ">Price:  <span class="cart-price font-bold text-[#00a9e7]">#eb5971</span></p>
+                                <p class="text-xl font-mono">Rating:  <span class="cart-rating  font-bold text-[#eb5971]"></span></p>
+                            </div>
+                            <div class="flex items-center gap-3 ">
+                                <button class="btn btn-outline btn-info">+</button>
+                                <span class="cart-amount font-bold text-xl">0</span>
+                                <button class="btn btn-outline btn-error">-</button>
+                            </div> 
+                        </div>
+                    </li>
+                </template>
+            </div>
+        </section>
+    </main>
+    <script type="module" src="./src/js/cart.js"></script>  
+</body>
+</html>

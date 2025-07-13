@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Products</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="./src/css/output.css" />
 </head>
@@ -31,8 +34,8 @@
                 </div>
                 <div class="navbar-end">
                     <div class="indicator">
-                        <span class="indicator-item badge badge-secondary product-amount">0</span>
-                        <button class="btn"><i class="fa-solid fa-cart-shopping text-2xl"></i></button>
+                        <span class=" product-amount  indicator-item badge badge-secondary ">0</span>
+                        <a href="./cart.html" class="btn"><i class="fa-solid fa-cart-shopping text-2xl"></i></a>
                     </div>
                 </div>
             </div>
@@ -41,7 +44,16 @@
     <main>
         <section>
             <div class="align-elements">
-                <h2 class="text-3xl my-10 text-center">Products</h2>
+                <div class="flex justify-between items-center mb-20">
+                    <h2 class="text-3xl ">Products</h2>
+                    <div>
+                        <fieldset class="fieldset">
+                            <legend class="fieldset-legend">Maxsulot qidirish</legend>
+                            <input class="input w-80" type="text" id="search-text" placeholder="Type here" />
+                        </fieldset>
+                    </div>
+                </div>
+
                 <ul class="grid  grid-cols-1  md:grid-cols-2  lg:grid-cols-4 gap-5" id="products-list">
                 </ul>
                 <template>
@@ -60,8 +72,9 @@
                                         there are title and actions parts
                                     </p>
                                     <div class="card-actions flex items-center justify-between">
-                                        <p class="text-2xl font-bold text-[#ed1111]"><span class="card-price text-2xl"></span>$</p>
-                                        <button class="btn btn-outline btn-primary buy-button">Buy Now</button>
+                                        <p class="text-2xl font-bold text-[#eb5971]"><span
+                                                class="card-price text-2xl"></span>$</p>
+                                        <button class="btn btn-outline btn-info buy-button">Buy Now</button>
                                     </div>
                                 </div>
                             </div>
